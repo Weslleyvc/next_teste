@@ -63,7 +63,6 @@ export async function signupGoogle(origin: any) {
     provider: 'google',
     options: {
       redirectTo: `${origin}/auth/callback`,
-      skipBrowserRedirect: true
     },
   })
   
