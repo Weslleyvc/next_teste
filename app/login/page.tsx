@@ -36,7 +36,7 @@ export default function LoginPage() {
     };
   }, [popup]);
 
-  const login = async () => {
+  const loginpopup = async () => {
     const supabase = createClient();
     const origin = location.origin;
 
@@ -103,6 +103,7 @@ export default function LoginPage() {
   };
 
   return (
+    <div>
     <form>
       {/* <script src="https://accounts.google.com/gsi/client" async></script> */}
       <label htmlFor="email">Email:</label>
@@ -111,10 +112,13 @@ export default function LoginPage() {
       <input id="password" name="password" type="password"  />
       <button formAction={login}>Log in</button>
       <button formAction={signup}>Sign up</button>
-      <button formAction={signupGoogle}>Sign up Google</button>
-      <button formAction={handleSignInWithGoogle}>Sign up Google</button>
 
-      <button onClick={login}>
+      </form>
+      <div>
+      <button onClick={(event: any) => {signupGoogle(event.origin)}}>Sign up Google primeiro</button>
+      <button onClick={handleSignInWithGoogle}>Sign up Google</button>
+
+      <button onClick={loginpopup}>
       Google Login {popup ? "processing..." : ""}
       </button>
 
@@ -135,6 +139,7 @@ export default function LoginPage() {
      data-logo_alignment="left">
 </div>
 
-    </form>
+    </div>
+    </div>
   )
 }

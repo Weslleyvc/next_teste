@@ -48,8 +48,9 @@ export async function signup(formData: FormData) {
   redirect('/account')
 }
 
-export async function signupGoogle(formData: FormData) {
+export async function signupGoogle(origin: any) {
   const supabase = createClient()
+  // const origin = event.origin;
 
   // type-casting here for convenience
   // in practice, you should validate your inputs
@@ -61,7 +62,7 @@ export async function signupGoogle(formData: FormData) {
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
     options: {
-      redirectTo: 'http://localhost:3000/auth/callback',
+      redirectTo: `${origin}/auth/callback`,
       skipBrowserRedirect: true
     },
   })
