@@ -40,7 +40,7 @@ export default function LoginPage() {
     const supabase = createClient();
     const origin = location.origin;
 
-    const ul = `${origin}/auth/callback`;
+    const ul = `${origin}/auth/popup-callback`;
 
     console.log("URL: " + ul);
 
@@ -98,8 +98,8 @@ export default function LoginPage() {
     console.log(code);
 
     // clear popup and replace the route
-    // setPopup(null);
-    // router.replace(`/api/~~/?code=${code}`);
+    setPopup(null);
+    router.replace(`/auth/callback?code=${code}`);
   };
 
   return (
@@ -122,7 +122,7 @@ export default function LoginPage() {
       Google Login {popup ? "processing..." : ""}
       </button>
 
-      <div id="g_id_onload"
+      {/* <div id="g_id_onload"
      data-client_id="642352556064-jk60atlceacvhv9g2l0i8s2aqhn2ghp5.apps.googleusercontent.com"
      data-context="signin"
      data-ux_mode="popup"
@@ -137,7 +137,7 @@ export default function LoginPage() {
      data-text="signin_with"
      data-size="large"
      data-logo_alignment="left">
-</div>
+</div> */}
 
     </div>
     </div>
