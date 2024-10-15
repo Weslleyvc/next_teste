@@ -35,7 +35,7 @@ const PopupCallback = () => {
   return <div>&nbsp</div>;
 };
 
-export function Callback() {
+export function RetornoPopUpCallback() {
   return (
     // You could have a loading skeleton as the `fallback` too
     <Suspense fallback={<h1>Loading...</h1>}>
@@ -44,4 +44,4 @@ export function Callback() {
   )
 }
 
-export default Callback;
+export default RetornoPopUpCallback;
