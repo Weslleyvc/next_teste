@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 
 const PopupCallback = () => {
   const [mounted, setMounted] = useState(false);
@@ -35,4 +35,13 @@ const PopupCallback = () => {
   return <div>&nbsp</div>;
 };
 
-export default PopupCallback;
+export function Callback() {
+  return (
+    // You could have a loading skeleton as the `fallback` too
+    <Suspense fallback={<h1>Loading...</h1>}>
+      <PopupCallback />
+    </Suspense>
+  )
+}
+
+export default Callback;
