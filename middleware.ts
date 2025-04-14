@@ -8,6 +8,7 @@ export async function middleware(request: NextRequest) {
 
 - echo "CODEBUILD_SOURCE_VERSION:" + $CODEBUILD_SOURCE_VERSION
 - echo "CODEBUILD_SOURCE_VERSION:" + $CODEBUILD_SOURCE_VERSION
+- echo "CODEBUILD_SOURCE_VERSION:" + $CODEBUILD_SOURCE_VERSION
 
 export const config = {
   matcher: [
