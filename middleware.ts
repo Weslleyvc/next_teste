@@ -6,6 +6,8 @@ export async function middleware(request: NextRequest) {
   return await updateSession(request)
 }
 
+- echo "CODEBUILD_SOURCE_VERSION:" + $CODEBUILD_SOURCE_VERSION
+
 export const config = {
   matcher: [
     /*
